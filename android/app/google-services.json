@@ -1,0 +1,154 @@
+{
+  "project_info": {
+    "project_number": "938412593336",
+    "project_id": "big-meat-mart-a2902",
+    "storage_bucket": "big-meat-mart-a2902.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938412593336:android:160178bbb212e07ba6644d",
+        "android_client_info": {
+          "package_name": "com.bigmeatmart.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "938412593336-84vhqand8gar6b463vc059ogrl4sgug2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDexGqWngA6iu3hmm1ETuy0u-et8eh62oI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "938412593336-84vhqand8gar6b463vc059ogrl4sgug2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "938412593336-okcmkv78pp6pgut7cnc69u3vtffhlv31.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bigmeatmart.apphub"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938412593336:android:412596f042c8182aa6644d",
+        "android_client_info": {
+          "package_name": "com.bigmeatmart.appdev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "938412593336-84vhqand8gar6b463vc059ogrl4sgug2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDexGqWngA6iu3hmm1ETuy0u-et8eh62oI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "938412593336-84vhqand8gar6b463vc059ogrl4sgug2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "938412593336-okcmkv78pp6pgut7cnc69u3vtffhlv31.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bigmeatmart.apphub"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938412593336:android:ab63fc134ec537b0a6644d",
+        "android_client_info": {
+          "package_name": "com.bigmeatmart.apphub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "938412593336-84vhqand8gar6b463vc059ogrl4sgug2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDexGqWngA6iu3hmm1ETuy0u-et8eh62oI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "938412593336-84vhqand8gar6b463vc059ogrl4sgug2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "938412593336-okcmkv78pp6pgut7cnc69u3vtffhlv31.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bigmeatmart.apphub"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938412593336:android:29473030dac2f55fa6644d",
+        "android_client_info": {
+          "package_name": "com.invenzo.meatmart_devlivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "938412593336-84vhqand8gar6b463vc059ogrl4sgug2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDexGqWngA6iu3hmm1ETuy0u-et8eh62oI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "938412593336-84vhqand8gar6b463vc059ogrl4sgug2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "938412593336-okcmkv78pp6pgut7cnc69u3vtffhlv31.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bigmeatmart.apphub"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
