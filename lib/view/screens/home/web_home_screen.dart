@@ -149,14 +149,17 @@ class _WebHomeScreenState extends State<WebHomeScreen> {
                                     SizedBox(
                                       height: 40,
                                     ),
-                                    Container(
-                                      height: 100,
-                                      width: double.infinity,
-                                      child: WebView(
-                                        initialUrl: 'https://blog.bigmeatmart.com/this-is-the-dynamic-ticker-running-which-will-be-added-over-the-top/',
-                                        onWebViewCreated: (WebViewController controller) {
-                                          _controllerWeb.complete(controller);
-                                        },
+                                    MouseRegion(
+                                      cursor: SystemMouseCursors.text,
+                                      child: Container(
+                                        height: 100,
+                                        width: double.infinity,
+                                        child: WebView(
+                                          initialUrl: 'https://blog.bigmeatmart.com/this-is-the-dynamic-ticker-running-which-will-be-added-over-the-top/',
+                                          onWebViewCreated: (WebViewController controller) {
+                                            _controllerWeb.complete(controller);
+                                          },
+                                        ),
                                       ),
                                     ),
                                     // Image.asset(

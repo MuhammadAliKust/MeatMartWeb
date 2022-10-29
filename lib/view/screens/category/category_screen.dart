@@ -36,8 +36,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
             physics: NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: ResponsiveHelper.isDesktop(context) ? 6 : ResponsiveHelper.isTab(context) ? 4 : 3,
-              childAspectRatio: (1/1),
+              crossAxisCount: ResponsiveHelper.isDesktop(context) ? 5 : ResponsiveHelper.isTab(context) ? 4 : 3,
+              childAspectRatio: 0.8,
               mainAxisSpacing: Dimensions.PADDING_SIZE_SMALL,
               crossAxisSpacing: Dimensions.PADDING_SIZE_SMALL,
             ),
@@ -60,7 +60,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(Dimensions.RADIUS_SMALL),
                       child: CustomImage(
-                        height: 50, width: 50, fit: BoxFit.cover,
+                        height: 150, width: 150, fit: BoxFit.cover,
                         image: '${Get.find<SplashController>().configModel.baseUrls.categoryImageUrl}/${catController.categoryList[index].image}',
                       ),
                     ),
