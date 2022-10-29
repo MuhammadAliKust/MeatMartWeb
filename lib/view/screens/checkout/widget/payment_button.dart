@@ -22,7 +22,7 @@ class PaymentButton extends StatelessWidget {
           child: Container(
             width: 200, padding: EdgeInsets.all(Dimensions.PADDING_SIZE_DEFAULT),
             decoration: BoxDecoration(
-              color: Theme.of(context).cardColor,
+              color: _selected? Theme.of(context).primaryColor:Colors.white,
               borderRadius: BorderRadius.circular(Dimensions.RADIUS_SMALL),
               border: Border.all(color: _selected ? Theme.of(context).primaryColor : Theme.of(context).disabledColor, width: 1.5)
               // boxShadow: [BoxShadow(color: Colors.grey[Get.isDarkMode ? 800 : 200], blurRadius: 5, spreadRadius: 1)],
@@ -30,11 +30,11 @@ class PaymentButton extends StatelessWidget {
             child: Row(children: [
               Image.asset(
                 icon, width: 20, height: 20,
-                color: _selected ? Theme.of(context).primaryColor : Theme.of(context).disabledColor,
+                color: _selected ? Colors.white : Theme.of(context).disabledColor,
               ),
               SizedBox(width: Dimensions.PADDING_SIZE_SMALL),
 
-              Text(title, style: robotoBold.copyWith(fontSize: Dimensions.fontSizeSmall, color: _selected ? Theme.of(context).primaryColor : Theme.of(context).disabledColor)),
+              Text(title, style: robotoBold.copyWith(fontSize:15, color: _selected ?Colors.white : Theme.of(context).disabledColor)),
 
             ]),
 

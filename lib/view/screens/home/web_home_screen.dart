@@ -1,8 +1,10 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:chewie/chewie.dart';
 import 'package:efood_multivendor/controller/banner_controller.dart';
 import 'package:efood_multivendor/controller/splash_controller.dart';
+import 'package:efood_multivendor/data/api/api_client.dart';
 import 'package:efood_multivendor/data/model/response/config_model.dart';
 import 'package:efood_multivendor/util/dimensions.dart';
 import 'package:efood_multivendor/view/screens/home/web/web_banner_view.dart';
@@ -19,6 +21,8 @@ import 'package:efood_multivendor/view/screens/home/web/widgets/twelve.dart';
 import 'package:efood_multivendor/view/screens/home/web/widgets/two.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:http/http.dart' as http;
+import 'package:marquee/marquee.dart';
 import 'package:video_player/video_player.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:webview_flutter_web/webview_flutter_web.dart';
@@ -52,6 +56,16 @@ class _WebHomeScreenState extends State<WebHomeScreen> {
 
   ChewieController _chewieController;
   ChewieController _chewieController1;
+
+  Future<List> fetchMarqueeData() async {
+    return ApiClient()
+        .getData(
+            "https://blog.bigmeatmart.com/wp-json/wp/v2/posts?categories=5")
+        .then((value) {
+      var convertDatatoJson = jsonDecode(value.body);
+      return convertDatatoJson;
+    });
+  }
 
   @override
   void initState() {
@@ -113,27 +127,38 @@ class _WebHomeScreenState extends State<WebHomeScreen> {
                                     SizedBox(
                                       height: 30,
                                     ),
-                                    Row(
-                                      children: [
-                                        Expanded(
-                                            flex: 6,
-                                            child: Image.network(
-                                              'https://blog.bigmeatmart.com/wp-content/uploads/2022/08/90768-OJ6X8X-219-e1661674620853-1024x395.jpg',
-                                              height: 200,
-                                              fit: BoxFit.fill,
-                                            )),
-                                        SizedBox(width: 40,),
-                                        Expanded(
-                                            flex: 2,
-                                            child: Image.network(
-                                              'https://blog.bigmeatmart.com/wp-content/uploads/2022/08/274-1024x1024.jpg',
-                                              height: 200,
-                                              fit: BoxFit.fill,
-                                            )),
-                                      ],
+                                    // Row(
+                                    //   children: [
+                                    //     Expanded(
+                                    //         flex: 6,
+                                    //         child: Image.network(
+                                    //           'https://blog.bigmeatmart.com/wp-content/uploads/2022/08/90768-OJ6X8X-219-e1661674620853-1024x395.jpg',
+                                    //           height: 200,
+                                    //           fit: BoxFit.fill,
+                                    //         )),
+                                    //     SizedBox(width: 40,),
+                                    //     Expanded(
+                                    //         flex: 2,
+                                    //         child: Image.network(
+                                    //           'https://blog.bigmeatmart.com/wp-content/uploads/2022/08/274-1024x1024.jpg',
+                                    //           height: 200,
+                                    //           fit: BoxFit.fill,
+                                    //         )),
+                                    //   ],
+                                    // ),
+                                    SizedBox(
+                                      height: 40,
                                     ),
-                                    SizedBox(height: 40,),
-
+                                    Container(
+                                      height: 100,
+                                      width: double.infinity,
+                                      child: WebView(
+                                        initialUrl: 'https://blog.bigmeatmart.com/this-is-the-dynamic-ticker-running-which-will-be-added-over-the-top/',
+                                        onWebViewCreated: (WebViewController controller) {
+                                          _controllerWeb.complete(controller);
+                                        },
+                                      ),
+                                    ),
                                     // Image.asset(
                                     //   'assets/image/b3.png',
                                     //   height: 200,
@@ -191,7 +216,6 @@ class _WebHomeScreenState extends State<WebHomeScreen> {
                                     ),
                                     Container(
                                       width: double.infinity,
-
                                       child: GetBuilder<CategoryController>(
                                           builder: (categoryController) {
                                         return (categoryController
@@ -302,21 +326,7 @@ class _WebHomeScreenState extends State<WebHomeScreen> {
             ),
           ),
 
-          // SliverToBoxAdapter(
-          //   child: GestureDetector(
-          //     onVerticalDragUpdate: (updateDetails) {},
-          //     child: Container(
-          //       height: 850,
-          //       width: MediaQuery.of(context).size.width,
-          //       child: WebView(
-          //         initialUrl: 'https://blog.bigmeatmart.com/footer/',
-          //         onWebViewCreated: (WebViewController controller) {
-          //           _controllerWeb.complete(controller);
-          //         },
-          //       ),
-          //     ),
-          //   ),
-          // ),
+
         ],
       ),
     );

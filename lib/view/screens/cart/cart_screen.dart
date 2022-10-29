@@ -13,7 +13,9 @@ import 'package:efood_multivendor/view/screens/cart/widget/cart_product_widget.d
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../controller/order_controller.dart';
 import '../../base/custom_text_field.dart';
+import '../dashboard/dashboard_screen.dart';
 
 class CartScreen extends StatefulWidget {
   final fromNav;
@@ -173,6 +175,8 @@ class _CartScreenState extends State<CartScreen> {
                       child: CustomButton(
                           buttonText: 'proceed_to_checkout'.tr,
                           onPressed: () {
+                            Get.find<OrderController>().setOrderType('delivery', notify: true);
+                            Get.find<OrderController>().selectDelivery(0);
                             if (!cartController
                                     .cartList.first.product.scheduleOrder &&
                                 cartController.availableList.contains(false)) {
@@ -187,7 +191,22 @@ class _CartScreenState extends State<CartScreen> {
                     ),
                   ],
                 )
-              : NoDataScreen(isCart: true, text: '');
+              :  Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              NoDataScreen(isCart: true, text: ''),
+              Container(
+                width: Dimensions.WEB_MAX_WIDTH,
+                padding: EdgeInsets.all(Dimensions.PADDING_SIZE_SMALL),
+                child: CustomButton(
+                    buttonText: 'Continue Shopping'.tr,
+                    onPressed: () {
+                      print("Called");
+                      Get.offAll(()=>DashboardScreen(pageIndex: 0));
+                    }),
+              ),
+            ],
+          );;
         },
       ),
     );

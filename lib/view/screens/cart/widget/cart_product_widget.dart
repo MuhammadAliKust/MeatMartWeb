@@ -148,13 +148,16 @@ class CartProductWidget extends StatelessWidget {
                                 Get.find<CartController>().setQuantity(false, cart);
                               }else {
                                 Get.find<CartController>().removeFromCart(cartIndex);
+
                               }
+                              Get.find<CartController>().calculationCart();
                             },
                             isIncrement: false,
                           ),
                           Text(cart.quantity.toString(), style: robotoMedium.copyWith(fontSize: Dimensions.fontSizeExtraLarge)),
                           QuantityButton(
-                            onTap: () => Get.find<CartController>().setQuantity(true, cart),
+                            onTap: () { Get.find<CartController>().setQuantity(true, cart);
+                            Get.find<CartController>().calculationCart();},
                             isIncrement: true,
                           ),
                         ]),

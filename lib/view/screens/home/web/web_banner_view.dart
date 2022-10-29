@@ -25,7 +25,7 @@ class WebBannerView extends StatelessWidget {
       color: Color(0xFF171A29),
       padding: EdgeInsets.all(Dimensions.PADDING_SIZE_LARGE),
       alignment: Alignment.center,
-      child: SizedBox(width: 1210, height: 220, child: bannerController.bannerImageList != null ? Stack(
+      child: SizedBox(width: 1800, height: 380, child: bannerController.bannerImageList != null ? Stack(
         clipBehavior: Clip.none,
         fit: StackFit.expand,
         children: [
@@ -50,7 +50,7 @@ class WebBannerView extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(Dimensions.RADIUS_SMALL),
                       child: CustomImage(
-                        image: '$_baseUrl1/${bannerController.bannerImageList[index1]}', fit: BoxFit.cover, height: 220,
+                        image: '$_baseUrl1/${bannerController.bannerImageList[index1]}', fit: BoxFit.cover, height: 350 ,
                       ),
                     ),
                   )),
@@ -62,7 +62,7 @@ class WebBannerView extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(Dimensions.RADIUS_SMALL),
                       child: CustomImage(
-                        image: '$_baseUrl2/${bannerController.bannerImageList[index2]}', fit: BoxFit.cover, height: 220,
+                        image: '$_baseUrl2/${bannerController.bannerImageList[index2]}', fit: BoxFit.cover, height: 350,
                       ),
                     ),
                   ) : SizedBox()),
@@ -138,7 +138,7 @@ class WebBannerShimmer extends StatelessWidget {
       duration: Duration(seconds: 2),
       enabled: bannerController.bannerImageList == null,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_LARGE),
+        padding: EdgeInsets.symmetric(horizontal: 3),
         child: Row(children: [
 
           Expanded(child: Container(
@@ -149,7 +149,7 @@ class WebBannerShimmer extends StatelessWidget {
           SizedBox(width: Dimensions.PADDING_SIZE_LARGE),
 
           Expanded(child: Container(
-            height: 220,
+            height: 280,
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(Dimensions.RADIUS_SMALL), color: Colors.grey[Get.find<ThemeController>().darkTheme ? 700 : 300]),
           )),
 

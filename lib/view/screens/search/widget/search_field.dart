@@ -25,8 +25,8 @@ class _SearchFieldState extends State<SearchField> {
         hintText: widget.hint,
         hintStyle: robotoRegular.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).disabledColor),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(Dimensions.RADIUS_SMALL), borderSide: BorderSide.none),
-        filled: true, fillColor: Theme.of(context).cardColor,
-        isDense: true,
+         fillColor: Theme.of(context).cardColor,
+
         suffixIcon: IconButton(
           onPressed: widget.iconPressed,
           icon: Icon(widget.suffixIcon),

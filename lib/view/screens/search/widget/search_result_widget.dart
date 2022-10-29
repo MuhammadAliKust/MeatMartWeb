@@ -57,23 +57,7 @@ class _SearchResultWidgetState extends State<SearchResultWidget> with TickerProv
         )));
       }),
 
-      Center(child: Container(
-        width: Dimensions.WEB_MAX_WIDTH,
-        color: Theme.of(context).cardColor,
-        child: TabBar(
-          controller: _tabController,
-          indicatorColor: Theme.of(context).primaryColor,
-          indicatorWeight: 3,
-          labelColor: Theme.of(context).primaryColor,
-          unselectedLabelColor: Theme.of(context).disabledColor,
-          unselectedLabelStyle: robotoRegular.copyWith(color: Theme.of(context).disabledColor, fontSize: Dimensions.fontSizeSmall),
-          labelStyle: robotoBold.copyWith(fontSize: Dimensions.fontSizeSmall, color: Theme.of(context).primaryColor),
-          tabs: [
-            Tab(text: 'food'.tr),
-            Tab(text: 'restaurants'.tr),
-          ],
-        ),
-      )),
+
 
       Expanded(child: NotificationListener(
         onNotification: (scrollNotification) {
@@ -83,13 +67,7 @@ class _SearchResultWidgetState extends State<SearchResultWidget> with TickerProv
           }
           return false;
         },
-        child: TabBarView(
-          controller: _tabController,
-          children: [
-            ItemView(isRestaurant: false),
-            ItemView(isRestaurant: true),
-          ],
-        ),
+        child: ItemView(isRestaurant: false),
       )),
 
     ]);
